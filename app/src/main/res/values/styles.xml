@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MyTextInputLayout">
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/grey_purple</item>
+    </style>
+    <style name="MyTextMenuNav">
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BottomSheetTheme" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="android:colorBackground">@color/purple_dark</item>
+    </style>
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <style name="DatePickerDialogTheme" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="colorAccent">@color/purple</item>
+        <item name="android:textColorPrimary">@color/beige</item>
+        <item name="android:textColorSecondary">@color/beige</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:background">@color/purple_dark</item>
+    </style>
+
+</resources>

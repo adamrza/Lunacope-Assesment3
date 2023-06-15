@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_dashboard"
+    android:id="@+id/app_navigation">
+
+    <fragment
+        android:id="@+id/fragment_dashboard"
+        android:name="com.example.lunacope.dashboard.view.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_horoscope"
+        android:name="com.example.lunacope.horoscope.view.HoroscopeFragment"
+        android:label="fragment_horoscope"
+        tools:layout="@layout/fragment_horoscope">
+
+        <action android:id="@+id/action_to_horoscope_detail"
+            app:destination="@id/fragment_horoscope_detail"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.example.lunacope.settings.view.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+
+        <action android:id="@+id/action_to_edit_name"
+            app:restoreState="true"
+            app:destination="@id/fragment_edit_name"/>
+
+        <action android:id="@+id/action_to_edit_sign"
+            app:restoreState="true"
+            app:destination="@id/fragment_edit_sign"/>
+
+        <action android:id="@+id/action_to_about"
+            app:restoreState="true"
+            app:destination="@id/fragment_about"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_horoscope_detail"
+        android:name="com.example.lunacope.horoscope.view.HoroscopeDetailFragment"
+        android:label="fragment_horoscope_detail"
+        tools:layout="@layout/fragment_horoscope_detail">
+        <argument
+            android:name="sign"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <action android:id="@+id/action_back_to_horoscope"
+            app:restoreState="true"
+            app:popUpTo="@id/fragment_horoscope"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_edit_name"
+        android:name="com.example.lunacope.settings.view.EditNameFragment"
+        android:label="fragment_edit_name"
+        tools:layout="@layout/fragment_edit_name">
+
+        <action android:id="@+id/action_back_to_settings"
+            app:restoreState="true"
+            app:popUpTo="@id/fragment_settings"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_edit_sign"
+        android:name="com.example.lunacope.settings.view.EditSignFragment"
+        android:label="fragment_edit_sign"
+        tools:layout="@layout/fragment_edit_sign">
+
+        <action android:id="@+id/action_back_to_settings"
+            app:restoreState="true"
+            app:popUpTo="@id/fragment_settings"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_about"
+        android:name="com.example.lunacope.settings.view.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about">
+
+        <action android:id="@+id/action_back_to_settings"
+            app:restoreState="true"
+            app:popUpTo="@id/fragment_settings"/>
+    </fragment>
+
+</navigation>
